@@ -33,12 +33,3 @@ O projeto foi desenvolvido utilizando o padrão de arquitetura de API RESTful co
 * **Git & GitHub** (Versionamento)
 
 ---
-
-## ⚙️ Como executar o projeto localmente
-
-### Pré-requisitos
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-* [Git](https://git-scm.com)
-* [Node.js](https://nodejs.org/en/)
-* [Java JDK 17+](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-* [PostgreSQL](https://www.postgresql.org/)
