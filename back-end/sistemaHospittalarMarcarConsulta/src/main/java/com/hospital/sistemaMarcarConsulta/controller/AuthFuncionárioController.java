@@ -9,12 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin("*")
 public class AuthFuncionárioController {
 
     @Autowired
     private UserService service;
-
+    
     @PostMapping("/registrar")
     public ResponseEntity registrar(@RequestBody UserDTO body){
         service.registrar(body);

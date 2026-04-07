@@ -36,12 +36,12 @@ public class UserService {
 
     }
 
-    public ResponseEntity login(UserLoginDTO body){
+    public UserDTO login(UserLoginDTO body){
         System.out.println("email é " +body.email());
         Funcionarios user = this.repository.findByEmail(body.email()).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
         if (body.senha().equals(user.getSenha())){
-            return ResponseEntity.ok().build();
+            return user;
         }
 
         return ResponseEntity.badRequest().build();
