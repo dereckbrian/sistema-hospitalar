@@ -42,7 +42,3 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 * [Node.js](https://nodejs.org/en/)
 * [Java JDK 17+](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 * [PostgreSQL](https://www.postgresql.org/)
-
-### 1. Clonando o repositório
-```bash
-git clone [https://github.com/dereckbrian/sistema-hospitalar.git](https://github.com/dereckbrian/sistema-hospitalar.git
