@@ -15,10 +15,10 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
-    public ResponseEntity registrar(UserDTO body){
+    public UserDTO registrar(UserDTO body){
 
         if (body.senha() == null || body.senha().isEmpty()){
-            return ResponseEntity.badRequest().build();
+            throw new IllegalArgumentException("Algo deu errado");
         }
 
         Funcionarios user = new Funcionarios();
@@ -32,18 +32,17 @@ public class UserService {
 
         repository.save(user);
 
-        return ResponseEntity.ok().build();
+        return new UserDTO(user);
 
     }
 
-    public UserDTO login(UserLoginDTO body){
-        System.out.println("email é " +body.email());
+    public UserLoginDTO login(UserLoginDTO body){
         Funcionarios user = this.repository.findByEmail(body.email()).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
         if (body.senha().equals(user.getSenha())){
-            return user;
+            return new UserLoginDTO(user);
         }
 
-        return ResponseEntity.badRequest().build();
+        throw new IllegalArgumentException("E-mail ou senha invalidos");
     }
 }

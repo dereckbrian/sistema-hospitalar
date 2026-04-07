@@ -17,7 +17,7 @@ public class PacienteService {
     @Autowired
     PacienteRepository repository;
 
-    public ResponseEntity cadastrarPaciente(CadastroPacienteDTO body){
+    public CadastroPacienteDTO cadastrarPaciente(CadastroPacienteDTO body){
 
         Pacientes paciente = new Pacientes();
 
@@ -36,19 +36,19 @@ public class PacienteService {
 
         repository.save(paciente);
 
-        return ResponseEntity.ok().build();
+        return new CadastroPacienteDTO(paciente);
     }
 
-    public ResponseEntity acharPaciente(AcharPacienteDTO body){
+    public AcharPacienteDTO acharPaciente(AcharPacienteDTO body){
 
         Optional<Pacientes> cpfCerto = this.repository.findByCpf(body.cpf());
 
         if (cpfCerto.isEmpty()){
-            return ResponseEntity.badRequest().body("Usuário não existe ou cpf incorreto");
+            throw new IllegalArgumentException("Usuário não existe ou cpf incorreto");
         }
 
         Pacientes pacientes = cpfCerto.get();
 
-        return ResponseEntity.ok(pacientes);
+        return new AcharPacienteDTO(pacientes);
     }
 }
