@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    /* Isso garante que a página inteira tenha fundo cinza claro no modo normal, 
+       e um fundo bem escuro no modo dark */
+    @apply bg-gray-100 dark:bg-gray-900 transition-colors;
+  }
+}
