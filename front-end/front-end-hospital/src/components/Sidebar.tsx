@@ -52,14 +52,11 @@ export const Sidebar = ({ isOpen, closeSidebar, isDarkMode, toggleDarkMode }: Si
                 })}
             </div>
 
-            {/* Adicionado dark:border-gray-700 */}
             <div className="p-4 border-t dark:border-gray-700 gap-2">
-                {/* Adicionado dark:hover:bg-gray-800 */}
                 <button 
                     onClick={toggleDarkMode}
                     className="flex w-full items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition-colors"
                 >
-                    {/* Invertemos os ícones e os textos aqui */}
                     <span className="text-xl mr-2">{isDarkMode ? "🌙" : "☀️"}</span>
                     <span className="text-xl">{isDarkMode ? "Dark Mode" : "Light Mode"}</span>
                 </button>

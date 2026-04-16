@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; // Não esqueça de importar o useEffect
+import { useState, useEffect } from 'react'; 
 import { Navbar } from "../components/Navbar";
 import { Dashboard } from "../components/Dashboard";
 import { Sidebar } from '../components/Sidebar';
@@ -7,7 +7,6 @@ function Principal(){
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
 
-    // Adicione este bloco. Ele é o verdadeiro responsável por fazer o site todo ficar escuro
     useEffect(() => {
         if (darkMode) {
             document.documentElement.classList.add("dark");
